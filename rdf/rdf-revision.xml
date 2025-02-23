@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- The W3.org namespace-->
+<rdf:RDF 
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:feature="http://3xv.91a.mytemp.website/clothing-features#">
+
+    <rdf:Description rdf:about="http://3xv.91a.mytemp.website/clothes#t-shirt">
+        <feature:size>12</feature:size>
+        <feature:color rdf:resource="http://3xv.91a.mytemp.website/colors#white"/>
+
+    </rdf:Description>
+
+</rdf:RDF>
+
+<!--
+    The RDF statement breakdown
+    <rdf:Description rdf:about="subject">
+        <predicate rdf:resource="object"/>
+        <predicate>literal value</predicate>
+    </rdf:Description>
+-->

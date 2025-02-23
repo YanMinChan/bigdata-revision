@@ -1,0 +1,150 @@
+@prefix : <https://alasdairgray.github.io/ns/basic-university/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@base <https://alasdairgray.github.io/ns/basic-university/> .
+
+<https://alasdairgray.github.io/ns/start/> rdf:type owl:Ontology ;
+                                            dcterms:creator <http://orcid.org/0000-0002-5711-4872> ,
+                                                            "Yan Min Chan"@en ;
+                                            dcterms:description "An ontology describing basic owl"@en ;
+                                            dcterms:license <http://creativecommons.org/licenses/by/4.0/> ;
+                                            dcterms:title "Basic Owl" ;
+                                            owl:versionInfo 1.0 .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/creator
+dcterms:creator rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+dcterms:description rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+dcterms:license rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+dcterms:title rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://alasdairgray.github.io/ns/start/courseTitle
+:courseTitle rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdfs:domain :Course .
+
+
+###  https://alasdairgray.github.io/ns/start/hasName
+:hasName rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf owl:topObjectProperty ;
+         rdfs:domain :Person .
+
+
+###  https://alasdairgray.github.io/ns/start/hasStudent
+:hasStudent rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            owl:inverseOf :studies ;
+            rdfs:domain :Course ;
+            rdfs:range :Student .
+
+
+###  https://alasdairgray.github.io/ns/start/hasTeacher
+:hasTeacher rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            owl:inverseOf :teaches ;
+            rdfs:domain :Course ;
+            rdfs:range :Academic .
+
+
+###  https://alasdairgray.github.io/ns/start/studies
+:studies rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf owl:topObjectProperty ;
+         rdfs:domain :Student ;
+         rdfs:range :Course .
+
+
+###  https://alasdairgray.github.io/ns/start/teaches
+:teaches rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf owl:topObjectProperty ;
+         rdfs:domain :Academic ;
+         rdfs:range :Course .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://alasdairgray.github.io/ns/start/Academic
+:Academic rdf:type owl:Class ;
+          rdfs:subClassOf :Staff .
+
+
+###  https://alasdairgray.github.io/ns/start/Administrative
+:Administrative rdf:type owl:Class ;
+                rdfs:subClassOf :Staff .
+
+
+###  https://alasdairgray.github.io/ns/start/Course
+:Course rdf:type owl:Class ;
+        owl:disjointWith :Person .
+
+
+###  https://alasdairgray.github.io/ns/start/Person
+:Person rdf:type owl:Class .
+
+
+###  https://alasdairgray.github.io/ns/start/Postgraduate
+:Postgraduate rdf:type owl:Class ;
+              rdfs:subClassOf :Student .
+
+
+###  https://alasdairgray.github.io/ns/start/Staff
+:Staff rdf:type owl:Class ;
+       rdfs:subClassOf :Person ;
+       rdfs:comment "A person who works at the university."@en ;
+       rdfs:label "Staff member"@en .
+
+
+###  https://alasdairgray.github.io/ns/start/Student
+:Student rdf:type owl:Class ;
+         rdfs:subClassOf :Person ;
+         rdfs:comment "A person who studies at the university."@en ;
+         rdfs:label "University student"@en .
+
+
+###  https://alasdairgray.github.io/ns/start/Undergraduate
+:Undergraduate rdf:type owl:Class ;
+               rdfs:subClassOf :Student .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://alasdairgray.github.io/ns/start/alice
+:alice rdf:type owl:NamedIndividual ,
+                :Person ;
+       :studies :f20bd .
+
+
+###  https://alasdairgray.github.io/ns/start/f20bd
+:f20bd rdf:type owl:NamedIndividual .
+
+
+###  https://alasdairgray.github.io/ns/start/f21bd
+:f21bd rdf:type owl:NamedIndividual ,
+                :Course .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi

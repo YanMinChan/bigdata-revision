@@ -1,0 +1,46 @@
+# Q2
+SELECT distinct ?author
+WHERE {
+    ?work dbo:author ?author.
+    ?author dbo:birthPlace dbr:New_York_City.
+} LIMIT 500
+
+# Q3
+SELECT distinct ?place ?dist
+WHERE {
+    ?place dbo:distanceToEdinburgh ?dist.
+    FILTER (?dist > 20000).
+} LIMIT 100
+
+SELECT distinct ?place ?pc ?dist
+WHERE {
+    ?place dbo:distanceToEdinburgh ?dist.
+    ?place dbo:postalCode ?pc.
+    FILTER regex(?pc, "EH").
+} ORDER BY ASC(?dist).
+
+# Q4
+SELECT AVG(?dist)
+WHERE {
+    ?place dbo:distanceToEdinburgh ?dist.
+}  LIMIT 500
+
+SELECT  ?pca AVG(?dist)
+WHERE {
+    ?place dbo:distanceToEdinburgh ?dist.
+    ?place dbp:postcodeArea ?pca.
+} GROUP BY ?pca
+ORDER BY ASC(AVG(?dist))
+
+SELECT ?pca ?avgD
+WHERE {
+    {
+    SELECT  ?pca AVG(?dist) as ?avgD
+    WHERE {
+        ?place dbo:distanceToEdinburgh ?dist.
+        ?place dbp:postcodeArea ?pca.
+    } GROUP BY ?pca
+    ORDER BY ASC(AVG(?dist))
+    }
+    FILTER (?avgD > 200000)
+}
