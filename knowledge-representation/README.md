@@ -1,5 +1,9 @@
 ﻿# Knowledge Representation
-This is some notes I make from the slides
+This is some notes I make from the slides and extra materials I found online
+
+## Raw data to RDF
+1. Protege
+* We can manually define OWL classes and relationships, then import CSV data in protege
 
 ## RDF
 
