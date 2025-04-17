@@ -23,6 +23,16 @@ A Table of 5 star linked data
 
 Linked Closed Data: If the Linked Data Principles is applied within an enterprise, no open license is needed.
 
+The 5Vs of Big Data
+
+| Characteristic | Description                                            |
+|----------------|--------------------------------------------------------|
+| Volume         | The size of the data                                   |
+| Velocity       | The speed of which data is generated                   |
+| Variety        | The variety of data source                             |
+| Veracity       | The quality of data (clean, dirty with noise)          |
+| Value          | The insights the data generates (best selling product) |
+
 ## Semantic Web
 * Linked web of data, using machine readable data such as RDF and OWL.
 ### Semantic Web Challenge
