@@ -11,7 +11,7 @@
 * Encoding: RDF
 * Links: Data reuse from internal or external using RDF (The 5 star linked open data [[source](https://5stardata.info/en/)])
 
-A Table of 5 star linked data
+### A Table of 5 star linked data
 
 | Star   | Characteristic                                  | Format  |
 |--------|-------------------------------------------------|---------|
@@ -23,7 +23,7 @@ A Table of 5 star linked data
 
 Linked Closed Data: If the Linked Data Principles is applied within an enterprise, no open license is needed.
 
-The 5Vs of Big Data
+### The 5Vs of Big Data
 
 | Characteristic | Description                                            |
 |----------------|--------------------------------------------------------|
@@ -44,8 +44,9 @@ The 5Vs of Big Data
     * i.e. Knows Paris_Hilton refer to the Hotel in some context
 
 ## Knowledge Graph
+* Knowledge base (university course and students etc) structured as a graph
 * Enables user to search for things and get relevant information to the query
-* (related with knowledge representation)
+
 ### Knowledge Graph Construction
-* Identify the entities (ie. Book, Author)
-* Identify the relationships (ie. writtenBy)
+* Identify the entities/nodes (ie. Book, Author)
+* Identify the relationships/edges (ie. writtenBy)
