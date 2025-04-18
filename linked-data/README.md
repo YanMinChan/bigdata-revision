@@ -42,6 +42,15 @@ Linked Closed Data: If the Linked Data Principles is applied within an enterpris
         * Paris_Hilton a schema:Hotel .
 * Machines infer knowledge
     * i.e. Knows Paris_Hilton refer to the Hotel in some context
+### Semantic Web Stack of Technologies
+[Figure](https://www.researchgate.net/figure/The-Semantic-Web-stack-The-dotted-area-includes-the-technologies-used-in-the-Web-of-Data_fig1_259646272)
+
+We will cover
+* Namespaces (IRIs)
+* RDF
+* OWL
+* Logic (OWL Reasoning)
+
 
 ## Knowledge Graph
 * Knowledge base (university course and students etc) structured as a graph

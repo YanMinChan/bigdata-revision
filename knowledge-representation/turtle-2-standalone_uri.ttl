@@ -1,0 +1,14 @@
+# The namespaces
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix ex: <http://example.org/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+# Individuals
+ex:Eve 
+    a foaf:Person ;
+    foaf:name "Eve" ;
+    foaf:mbox <mailto:eve@example.org> . # For a standalone URI use <>
+
+ex:Group1
+    a foaf:Group ;
+    foaf:member ex:Eve .

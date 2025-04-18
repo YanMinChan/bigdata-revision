@@ -1,0 +1,10 @@
+# The namespaces
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix ex: <http://example.org/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+# Individuals
+ex:Charlie 
+    a foaf:Person ;
+    foaf:name "Charlie" ;
+    foaf:knows ex:Dana .
