@@ -1,0 +1,57 @@
+# Scenario: A Company's Employees and Their Departments
+# Namespaces
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Classes
+:Company a rdfs:Class .
+
+:Department a rdfs:Class .
+
+:Employee a rdfs:Class .
+
+# Properties
+:hasDepartment a rdf:Property ;
+    rdfs:domain :Company ;
+    rdfs:range  :Department .
+
+:worksIn a rdf:Property ;
+    rdfs:domain :Employee ;
+    rdfs:range  :Department .
+
+:hasFriend a rdf:Property ;
+    rdfs:domain :Employee ;
+    rdfs:range :Employee .
+
+:yearsWorked a rdf:Property ;
+    rdfs:domain :Employee ;
+    rdfs:range xsd:int .
+
+:hasJobTitle a rdf:Property ;
+    rdfs:domain :Employee ;
+    rdfs:range xsd:string .
+
+# Individuals
+:TechInnovations a :Company ;
+    :hasDepartment :Engineering ,
+        : Marketing .
+
+:Alice a :Employee ;
+    :worksIn :Engineering ;
+    :hasFriend :Bob ;
+    :hasJobTitle "Software Engineer" .
+
+:Bob a :Employee ;
+    :worksIn :Marketing ;
+    :hasFriend :Alice ;
+    :hasJobTitle "Marketing Manager" .
+
+:Charlie a :Employee ;
+    :worksIn :Engineering ;
+    :yearsWorked "3"^^xsd:integer ;
+    :hasJobTitle "Senior Developer" .
+
+:Engineering a :Department .
+
+:Marketing a :Department .
